@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f5;
+  }
+  
+  h2 {
+    margin: 10px 0;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Default Button Styling */
+  .choice {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .choice:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Animation on Click */
+  .choice:active {
+    transform: scale(0.9);
+    box-shadow: 0 4px #999;
+  }
+  
+  /* Additional Styling for Reset Button */
+  .reset {
+    background-color: #dc3545;
+  }
+  
+  .reset:hover {
+    background-color: #a71d2a;
+  }
+  

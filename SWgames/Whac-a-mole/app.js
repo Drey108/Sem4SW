@@ -7,6 +7,7 @@ let result = 0
 let hitPosition
 let currentTime = 60
 let timerId = null
+let moleSpeed = 500
 
 function randomSquare() {
   squares.forEach(square => {
@@ -25,12 +26,15 @@ squares.forEach(square => {
       result++
       score.textContent = result
       hitPosition = null
+      clearInterval(timerId)
+      moleSpeed = Math.max(200, 500 - result * 20)
+      timerId = setInterval(randomSquare, moleSpeed)
     }
   })
 })
 
 function moveMole() {
-  timerId = setInterval(randomSquare, 500)
+  timerId = setInterval(randomSquare, moleSpeed)
 }
 
 moveMole()
@@ -44,8 +48,6 @@ function countDown() {
    clearInterval(timerId)
    alert('GAME OVER! Your final score is ' + result)
  }
-
 }
 
 let countDownTimerId = setInterval(countDown, 1000)
-
