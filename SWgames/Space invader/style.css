@@ -27,3 +27,8 @@
 .boom {
 	background-color: red;
 }
+
+.zigzag {
+    background-color: blue;
+    border-radius: 10px;
+}

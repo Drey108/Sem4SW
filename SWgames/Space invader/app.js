@@ -15,17 +15,27 @@ for (let i = 0; i < width * width; i++) {
 
 const squares = Array.from(document.querySelectorAll(".grid div"))
 
-
-const alienInvaders = [
+const regularInvaders = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
     30, 31, 32, 33, 34, 35, 36, 37, 38, 39
 ]
 
+const zigzagInvaders = [
+    40, 42, 44, 46, 48, 50, 52, 54, 56, 58,
+    70, 72, 74, 76, 78, 80, 82, 84, 86, 88
+]
+
 function draw() {
-    for (let i = 0; i < alienInvaders.length; i++) {
+    for (let i = 0; i < regularInvaders.length; i++) {
         if (!aliensRemoved.includes(i)) {
-            squares[alienInvaders[i]].classList.add("invader")
+            squares[regularInvaders[i]].classList.add("invader")
+        }
+    }
+
+    for (let i = 0; i < zigzagInvaders.length; i++) {
+        if (!aliensRemoved.includes(i)) {
+            squares[zigzagInvaders[i]].classList.add("zigzag")
         }
     }
 }
@@ -35,8 +45,11 @@ draw()
 squares[currentShooterIndex].classList.add("shooter")
 
 function remove() {
-    for (let i = 0; i < alienInvaders.length; i++) {
-        squares[alienInvaders[i]].classList.remove("invader")
+    for (let i = 0; i < regularInvaders.length; i++) {
+        squares[regularInvaders[i]].classList.remove("invader")
+    }
+    for (let i = 0; i < zigzagInvaders.length; i++) {
+        squares[zigzagInvaders[i]].classList.remove("zigzag")
     }
 }
 
@@ -56,38 +69,46 @@ function moveShooter(e) {
 document.addEventListener("keydown", moveShooter)
 
 function moveInvaders() {
-    const leftEdge = alienInvaders[0] % width === 0
-    const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width - 1
+    const leftEdge = regularInvaders[0] % width === 0
+    const rightEdge = regularInvaders[regularInvaders.length - 1] % width === width - 1
     remove()
 
     if (rightEdge && isGoingRight) {
-        for (let i = 0; i < alienInvaders.length; i++) {
-            alienInvaders[i] += width + 1
+        for (let i = 0; i < regularInvaders.length; i++) {
+            regularInvaders[i] += width + 1
             direction = -1
             isGoingRight = false
         }
     }
 
     if (leftEdge && !isGoingRight) {
-        for (let i = 0; i < alienInvaders.length; i++) {
-            alienInvaders[i] += width - 1
+        for (let i = 0; i < regularInvaders.length; i++) {
+            regularInvaders[i] += width - 1
             direction = 1
             isGoingRight = true
         }
     }
 
-    for (let i = 0; i < alienInvaders.length; i++) {
-        alienInvaders[i] += direction
+    for (let i = 0; i < regularInvaders.length; i++) {
+        regularInvaders[i] += direction
+    }
+
+    for (let i = 0; i < zigzagInvaders.length; i++) {
+        if (i % 2 === 0) {
+            zigzagInvaders[i] += 1
+        } else {
+            zigzagInvaders[i] -= 1
+        }
     }
 
     draw()
 
-    if (squares[currentShooterIndex].classList.contains("invader")) {
+    if (squares[currentShooterIndex].classList.contains("invader") || squares[currentShooterIndex].classList.contains("zigzag")) {
         resultDisplay.innerHTML = "GAME OVER"
         clearInterval(invadersId)
     }
 
-    if (aliensRemoved.length === alienInvaders.length) {
+    if (aliensRemoved.length === regularInvaders.length + zigzagInvaders.length) {
         resultDisplay.innerHTML = "YOU WIN"
         clearInterval(invadersId)
     }
@@ -112,8 +133,12 @@ function shoot(e) {
             setTimeout(() => squares[currentLaserIndex].classList.remove("boom"), 300)
             clearInterval(laserId)
 
-            const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
-            aliensRemoved.push(alienRemoved)
+            const alienRemoved = regularInvaders.indexOf(currentLaserIndex)
+            if (alienRemoved !== -1) aliensRemoved.push(alienRemoved)
+
+            const zigzagAlienRemoved = zigzagInvaders.indexOf(currentLaserIndex)
+            if (zigzagAlienRemoved !== -1) aliensRemoved.push(zigzagAlienRemoved)
+
             results++
             resultDisplay.innerHTML = results
         }
