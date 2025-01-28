@@ -3,19 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css"> <!-- Add CSS file -->
+    <title>Elder Scrolls RPS</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
   </head>
   <body>
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
-    <h2>Your Choice: <span id="user-choice"></span></h2>
-    <h2>Result: <span id="result"></span></h2>
+    <audio autoplay loop>
+      <source src="bg.mp3" type="audio/mpeg"> <!-- Add the path to your background music file -->
+      Your browser does not support the audio element.
+    </audio>
 
-    <div class="button-container">
-      <button class="choice" id="rock">rock</button>
-      <button class="choice" id="paper">paper</button>
-      <button class="choice" id="scissors">scissors</button>
-      <button class="choice reset" id="reset">Reset</button>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <h2>Computer Choice: <span id="computer-choice"></span></h2>
+      <h2>Your Choice: <span id="user-choice"></span></h2>
+      <h2>Result: <span id="result"></span></h2>
+
+      <div class="button-container">
+        <button class="choice" id="rock">rock</button>
+        <button class="choice" id="paper">paper</button>
+        <button class="choice" id="scissors">scissors</button>
+        <button class="choice reset" id="reset">Reset</button>
+      </div>
     </div>
 
     <script src="app.js" charset="utf-8"></script>

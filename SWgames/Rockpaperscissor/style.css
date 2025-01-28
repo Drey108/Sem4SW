@@ -1,52 +1,93 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+
+  /* Placeholder for background image */
+  background: url('https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/10/starfield-adoring-fan-elder-scrolls.jpg') no-repeat center center fixed; /* Add the path to your background image here */
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  color: #ffe066;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Container */
+.button-container {
+  margin-top: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+/* Default Button Styling */
+.choice {
+  background-color: rgba(0, 123, 255, 0.8);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.choice:hover {
+  background-color: rgba(0, 123, 255, 1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.choice:active {
+  transform: scale(0.95);
+}
+
+/* Reset Button */
+.reset {
+  background-color: rgba(220, 53, 69, 0.8);
+}
+
+.reset:hover {
+  background-color: rgba(220, 53, 69, 1);
+}
+
+/* Container Styling */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
   }
-  
+
   h2 {
-    margin: 10px 0;
+    font-size: 1.2rem;
   }
-  
-  .button-container {
-    margin-top: 20px;
-  }
-  
+
   button {
     padding: 10px 20px;
     font-size: 16px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  
-  /* Default Button Styling */
-  .choice {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .choice:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Animation on Click */
-  .choice:active {
-    transform: scale(0.9);
-    box-shadow: 0 4px #999;
-  }
-  
-  /* Additional Styling for Reset Button */
-  .reset {
-    background-color: #dc3545;
-  }
-  
-  .reset:hover {
-    background-color: #a71d2a;
-  }
-  
+}
