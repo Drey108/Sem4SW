@@ -1,4 +1,5 @@
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,30 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <audio id="background-music" autoplay loop>
-    <source src="background-music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
   <h3>Score: <span id="result"></span></h3>
-
+  <h3>Time: <span id="timer">0</span> seconds</h3> <!-- Timer display -->
   <div class="grid"></div>
-
   <footer>
     If you take time, you are Ghajini
   </footer>
-
-  <script>
-    window.onload = function() {
-      var audio = document.getElementById("background-music");
-      // Ensure the audio plays even with autoplay restrictions in some browsers
-      audio.play().catch(function(error) {
-        console.log('Audio play failed:', error);
-      });
-    };
-  </script>
-
   <script src="app.js" charset="utf-8"></script>
 </body>
 </html>
