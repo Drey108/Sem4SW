@@ -1,6 +1,43 @@
+
+body {
+  background-image: url('images/background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 400px;
-  height: 300px;
+  margin: 20px auto;
+}
+
+.grid img {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.grid img:hover {
+  transform: scale(1.1);
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px #000;
 }
