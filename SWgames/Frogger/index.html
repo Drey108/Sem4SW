@@ -2,99 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Frogger</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froggy Hop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="game-container">
+        <h1 class="game-title">Froggy Hop</h1>
+        
+        <div class="info-board">
+            <div class="info-item">
+                <h3>⏳ Time Left</h3>
+                <span id="time-left">20</span>
+            </div>
+        </div>
 
-    <h3>Seconds left: <span id="time-left">20</span></h3>
-    <h3>Score: <span id="score">0</span></h3>
-    <h3>Result: <span id="result"></span></h3>
+        <button id="start-pause-button">Start Adventure</button>
+        <h3 id="result"></h3>
 
-    <button id="start-pause-button">Start/Pause</button>
-
-    <div class="grid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="ending-block"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="log-left l1"></div>
-        <div class="log-left l2"></div>
-        <div class="log-left l3"></div>
-        <div class="log-left l4"></div>
-        <div class="log-left l5"></div>
-        <div class="log-left l1"></div>
-        <div class="log-left l2"></div>
-        <div class="log-left l3"></div>
-        <div class="log-left l4"></div>
-        <div class="log-right l5"></div>
-        <div class="log-right l1"></div>
-        <div class="log-right l2"></div>
-        <div class="log-right l3"></div>
-        <div class="log-right l4"></div>
-        <div class="log-right l5"></div>
-        <div class="log-right l1"></div>
-        <div class="log-right l2"></div>
-        <div class="log-right l3"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-left c1"></div>
-        <div class="car-left c2"></div>
-        <div class="car-left c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
-        <div class="car-right c1"></div>
-        <div class="car-right c2"></div>
-        <div class="car-right c3"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="starting-block frog"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="grid">
+            <div></div><div></div><div></div><div></div><div class="ending-block"></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div class="log-left l1"></div><div class="log-left l2"></div><div class="log-left l3"></div><div class="log-left l4"></div><div class="log-left l5"></div><div class="log-left l1"></div><div class="log-left l2"></div><div class="log-left l3"></div><div class="log-left l4"></div>
+            <div class="log-right l5"></div><div class="log-right l1"></div><div class="log-right l2"></div><div class="log-right l3"></div><div class="log-right l4"></div><div class="log-right l5"></div><div class="log-right l1"></div><div class="log-right l2"></div><div class="log-right l3"></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div class="car-left c1"></div><div class="car-left c2"></div><div class="car-left c3"></div><div class="car-left c1"></div><div class="car-left c2"></div><div class="car-left c3"></div><div class="car-left c1"></div><div class="car-left c2"></div><div class="car-left c3"></div>
+            <div class="car-right c1"></div><div class="car-right c2"></div><div class="car-right c3"></div><div class="car-right c1"></div><div class="car-right c2"></div><div class="car-right c3"></div><div class="car-right c1"></div><div class="car-right c2"></div><div class="car-right c3"></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
     </div>
 
     <script src="app.js"></script>
